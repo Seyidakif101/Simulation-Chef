@@ -23,8 +23,8 @@ namespace Simulation_042.Helper
         }
         public async Task InitalizerRole()
         {
-            await CreateAdmin();
             await CreateRole();
+            await CreateAdmin();
         }
         private async Task CreateAdmin()
         {

@@ -72,18 +72,18 @@ namespace Simulation_042.Controllers
             return RedirectToAction(nameof(Login));
 
         }
-        public async Task<IActionResult> CreateRole()
-        {
-            await _roleManager.CreateAsync(new IdentityRole()
-            {
-                Name = "Admin"
-            });
-            await _roleManager.CreateAsync(new IdentityRole()
-            {
-                Name = "Member"
-            });
-            return RedirectToAction(nameof(Login));
+        //public async Task<IActionResult> CreateRole()
+        //{
+        //    await _roleManager.CreateAsync(new IdentityRole()
+        //    {
+        //        Name = "Admin"
+        //    });
+        //    await _roleManager.CreateAsync(new IdentityRole()
+        //    {
+        //        Name = "Member"
+        //    });
+        //    return RedirectToAction(nameof(Login));
 
-        }
+        //}
     }
 }
