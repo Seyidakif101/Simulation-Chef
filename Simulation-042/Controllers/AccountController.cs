@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+using Simulation_042.Enums;
 using Simulation_042.Models;
 using Simulation_042.ViewModels.AccountViewModels;
 
@@ -33,7 +34,7 @@ namespace Simulation_042.Controllers
                     return View(vm);
                 }
             }
-            await _userManager.AddToRoleAsync(user, "Member");
+            await _userManager.AddToRoleAsync(user, RolesEnum.Member.ToString());
             await _signInManager.SignInAsync(user, false);
             return RedirectToAction("Index", "Home");
         }

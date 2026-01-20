@@ -71,6 +71,17 @@
                     <li><a href="#team" class="smoothScroll">Chef</a></li>
                     <li><a href="#menu" class="smoothScroll">Menu</a></li>
                     <li><a href="#contact" class="smoothScroll">Contact</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                         <li><a class="smoothScroll">@User.Identity.Name</a></li>
+                        <li><a asp-controller="Account" asp-action="Logout" class="smoothScroll">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Login" class="smoothScroll">Login</a></li>
+                        <li><a asp-controller="Account" asp-action="Register" class="smoothScroll">Register</a></li>
+                        
+                    }
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
